@@ -3,8 +3,22 @@ import { Type } from "typebox";
 import path from "node:path";
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { realpathSync } from "node:fs";
+import { realpathSync, readFileSync } from "node:fs";
 import { createPlaintextBearerAuthGuard, resolveSecret } from "./security.js";
+
+// 本地适配：从 ~/.pi/agent/agentmemory.env 读连接配置
+//（pi 守护进程的环境变量不易注入，用配置文件自包含；已有环境变量时以环境变量优先）
+try {
+  for (const line of readFileSync(path.join(process.env.HOME || "", ".pi", "agent", "agentmemory.env"), "utf-8").split("\n")) {
+    const t = line.trim();
+    if (!t || t.startsWith("#")) continue;
+    const eq = t.indexOf("=");
+    if (eq < 0) continue;
+    const k = t.slice(0, eq).trim();
+    const v = t.slice(eq + 1).trim().replace(/^["']|["']$/g, "");
+    if (!process.env[k]) process.env[k] = v;
+  }
+} catch {}
 
 function repositoryRoot(dir: string, top: string, gitDir?: string, commonDir?: string): string {
   if (!gitDir || !commonDir) return top;
@@ -411,6 +425,12 @@ export default function agentmemoryExtension(pi: ExtensionAPI) {
     await callAgentMemory("session/end", {
       body: { sessionId },
       timeoutMs: 5_000,
+    });
+    // Delayed sweep: crystallize actions completed >7 days ago so their lessons
+    // get saved even when no agent called memory_crystallize explicitly.
+    await callAgentMemory("crystals/auto", {
+      body: { olderThanDays: 7 },
+      timeoutMs: 30_000,
     });
     void callAgentMemory("consolidate", { body: {} });
   });

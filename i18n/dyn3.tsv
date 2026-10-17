@@ -1,0 +1,45 @@
+Counts the  sessions loaded in this viewer, on the day each started. Pick a shaded day to list its sessions.	统计此查看器中加载的  个会话，按各自开始日计。点击有底色的日期可列出当天会话。
+Counts the  newest of  sessions loaded in this viewer, on the day each started. Pick a shaded day to list its sessions.	统计此查看器中加载的最近  个会话（共  个），按各自开始日计。点击有底色的日期可列出当天会话。
+The newest observations from the  newest sessions, grouped by session. New ones appear at the top the moment an agent records them.	来自最近  个会话的最新观测，按会话分组。agent 一记录，新的观测就会出现在顶部。
+ observations from the  newest sessions	 条观测来自最近  个会话
+Patched  times from the live stream, last	已从实时流合入  次补丁，最近
+Patched  time from the live stream, last	已从实时流合入  次补丁，最近
+busiest day ·  obs	最忙日 ·  条观测
+ sessions, newest first	 个会话，最新优先
+ matching sessions, newest first	 个匹配会话，最新优先
+ matching observations	 条匹配观测
+Showing the  most connected of  nodes. Search finds the rest on the server.	显示连接最多的  个节点（共  个）。其余节点可在服务端搜索找到。
+Search all  nodes on the server	在服务端搜索全部  个节点
+Showing  of  matching observations	显示  /  条匹配观测
+Showing the newest 40 of . Open a session for its full timeline.	显示最新 40 条，共  条。打开会话查看完整时间线。
+ of  nodes have no relations yet.	 /  个节点还没有任何关系。
+None of the  sessions has produced any yet.	已结束的  个会话都还没有产生任何节点。
+ more in the sessions above.	还有  条在上方会话中。
+Not enough finished sessions yet: semantic facts need  session summaries and there are .	已完成的会话还不够：语义事实需要  份会话摘要，目前只有  份。
+Starts in  day if it stays unused, then − points a week.	若一直不用， 天后开始计衰减，之后每周 − 分。
+Starts in  days if it stays unused, then − points a week.	若一直不用， 天后开始计衰减，之后每周 − 分。
+Unused for  week; loses  points a week until an agent uses it again.	已  周未使用；每周流失  分，直到 agent 再次使用。
+Unused for  weeks; loses  points a week until an agent uses it again.	已  周未使用；每周流失  分，直到 agent 再次使用。
+A tool call with the same input and the same output as one stored in the last  is skipped when the hook sends no event id.	与最近  内已入库的一条输入输出完全相同的工具调用，在钩子未发送事件 ID 时会被跳过。
+ dropped because the spool was full or too old. Raise AGENTMEMORY_CAPTURE_SPOOL_MAX_BYTES.	有  条被丢弃，因为暂存文件已满或过旧。请调高 AGENTMEMORY_CAPTURE_SPOOL_MAX_BYTES。
+ waiting ·  KiB	 条等待 ·  KiB
+Showing  of 	显示  / 
+ of  shown	已显示  / 
++ more. 	还有  条。
+* counted over the  observations loaded below	* 统计范围为下方已加载的  条观测
+The graph page reads the top  most connected nodes in one request.	图谱页每次请求读取连接最多的前  个节点。
+ features off	 个功能已关闭
+ feature off	 个功能已关闭
+Showing  sessions, newest first	显示  个会话，最新优先
+Showing  of  sessions, newest first	显示  /  个会话，最新优先
+Showing  matching sessions, newest first	显示  个匹配会话，最新优先
+Showing  of  matching sessions, newest first	显示  /  个匹配会话，最新优先
+Showing  latest memories	显示  条最新记忆
+Showing  of  latest memories	显示  /  条最新记忆
+Showing  matching memories	显示  条匹配记忆
+Showing  of  matching memories	显示  /  条匹配记忆
+Showing  of  observations	显示  /  条观测
+Showing  newest entries	显示  条最新条目
+Showing  matching entries	显示  条匹配条目
+importance +	重要度 +
+ of  types	 /  种类型

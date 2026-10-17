@@ -1,0 +1,254 @@
+No action has been marked done and crystallized yet. Crystals are built from done actions.	还没有行动被标记为已完成并凝练。结晶由已完成的行动构建。
+Crystallizing needs an LLM provider, and none is configured. Transcript imports on the other hand create crystals without one.	凝练需要 LLM 提供方，当前未配置。相比之下，转录导入无需提供方也能生成结晶。
+Crystallize every finished action now:	立即凝练所有已完成的行动：
+Or from an agent, for specific actions:	或从 agent 发起，针对特定行动：
+Set an LLM key and restart agentmemory:	设置 LLM 密钥并重启 agentmemory：
+Silence is data too	沉默也是数据
+Relation types	关系类型
+causes	导致
+modifies	修改
+uses	使用
+contains	包含
+related	相关
+fixes	修复
+supersedes	取代
+relates to	相关
+depends on	依赖于
+depends_on	依赖于
+related_to	相关
+refers to	指向
+part of	属于
+part_of	属于
+implements	实现
+Import a structural code graph made by graphify:	导入由 graphify 生成的结构化代码图谱：
+Query it from an agent:	从 agent 中查询它：
+Add to the graph	加入图谱
+The files, functions, concepts and decisions agents worked with, and how they relate. Click a node to see its relations and the observations it came from.	agent 处理过的文件、函数、概念和决策，以及它们之间的关系。点击节点可查看其关系和来源观测。
+No LLM provider is set, so only structural relations exist: files and concepts that show up in the same observation, plus anything imported from a code graph. Typed entities and relations need an LLM.	未配置 LLM 提供方，因此只有结构化关系：出现在同一观测中的文件和概念，以及从代码图谱导入的内容。带类型的实体和关系需要 LLM。
+An LLM provider is set but GRAPH_EXTRACTION_ENABLED is off, so only structural relations exist. Turn it on for typed entities and relations.	已配置 LLM 提供方，但 GRAPH_EXTRACTION_ENABLED 处于关闭状态，因此只有结构化关系。开启后才有带类型的实体和关系。
+Loading relations…	正在加载关系…
+Relations appear as later sessions mention this entity together with others.	当后续会话把该实体与其他实体一同提到时，关系就会出现。
+Without LLM extraction, a relation appears only when this entity shows up in the same observation as another file or concept.	未开启 LLM 抽取时，只有当该实体与另一个文件或概念出现在同一观测中，关系才会出现。
+This node	此节点
+the other	另一方
+The other node	另一节点
+this one	此节点
+Structural code graph (graphify)	结构化代码图谱（graphify）
+· mentions it	· 提到它
+· same observations	· 相同的观测
+First seen	首次出现
+Also called	别名
+Search all	搜索全部
+nodes on the server	个节点（在服务端）
+most connected of	连接最多的
+nodes. Search finds the rest on the server.	个节点。其余节点可用搜索在服务端找到。
+from the live stream, last	来自实时流，最近
+This replays the whole corpus and can take several minutes on a large store.	这会回放整个语料库，数据量大时可能需要几分钟。
+Reload sources	重新加载来源
+No sources recorded. Nodes added before provenance tracking, or through a direct API call, carry no observation ids.	未记录来源。在来源追踪之前加入的节点，或通过直接 API 调用加入的节点，不携带观测 ID。
+Produced from this session	由本会话产生
+Nothing links back here yet. A memory links to this session when it is distilled from its observations by consolidation (needs an LLM) or saved with	还没有任何内容指回这里。当一条记忆由本会话的观测经整合（需要 LLM）提炼而来，或用
+; a lesson links here when it is crystallized from this session.	保存时，它就会关联到本会话；当一条经验教训由本会话凝练而来时，也会出现在这里。
+) as completed and records the end time now. It does not stop the agent: if it keeps working, its observations are still recorded under this session id.	) 标记为已完成，并立即记录结束时间。它不会停止 agent：如果 agent 继续工作，其观测仍会记录在这个会话 ID 下。
+Details	详情
+No start time recorded	未记录开始时间
+Tools used	使用的工具
+Files touched	涉及的文件
+Running so far	运行至今
+Last activity	最后活动
+End session…	结束会话…
+End session	结束会话
+End this session?	结束此会话？
+Delete…	删除…
+Delete lesson	删除经验教训
+Delete this lesson?	删除这条经验教训？
+Forget permanently	永久遗忘
+Forget this memory permanently?	永久遗忘这条记忆？
+Save as version	保存为新版本
+Review and save	检查并保存
+Loading older versions…	正在加载旧版本…
+An older version (	旧版本（
+) was forgotten.	）已被遗忘。
+(no longer stored)	（不再存储）
+(looking up its session)	（正在查找其会话）
+is kept as history and is not searched.	作为历史保留，但不会被搜索。
+The current text is	当前文本为
+Otherwise they stay as hidden history.	否则它们会作为隐藏历史保留。
+Memory text	记忆文本
+kept as history	保留为历史
+changes	变更
+Load older sessions	加载更早的会话
+Load more	加载更多
+Load older versions	加载旧版本
+matching session	匹配会话
+matching entry	匹配条目
+matching entries	匹配条目
+matching memory	匹配记忆
+matching memories	匹配记忆
+The request failed. Check that agentmemory is running, then reopen the session.	请求失败。请检查 agentmemory 是否在运行，然后重新打开该会话。
+The session is running but no tool use was captured yet. New ones appear here the moment they arrive.	会话正在运行，但还没有捕获到工具使用。新的工具调用一到就会出现在这里。
+This session ended before any tool use was captured.	本会话在任何工具使用被捕获之前就已结束。
+is not in this session	不在本会话中
+an LLM summary of the session, knowledge-graph extraction and, when consolidation is on, crystals and lessons.	会话的 LLM 摘要、知识图谱抽取，以及在整合开启时的结晶和经验教训。
+with no LLM provider configured, the summary and graph extraction are skipped, so ending only changes the status.	未配置 LLM 提供方时，摘要和图谱抽取会被跳过，因此结束会话只改变状态。
+and writes a short summary: a title, what happened and the key decisions. The summary is shown here and in the session list, and later feeds consolidation into facts and procedures. Running it again replaces the old summary.	并写入一段简短摘要：标题、经过以及关键决策。摘要会显示在这里和会话列表中，之后还会作为整合的输入生成事实和流程。再次运行会替换旧摘要。
+Session ended. The wrap-up (summary, graph, consolidation) runs in the background and its results appear here live.	会话已结束。收尾工作（摘要、图谱、整合）在后台运行，结果会实时出现在这里。
+Ending the session failed. Check that agentmemory is running and try again.	结束会话失败。请检查 agentmemory 是否在运行后重试。
+No LLM provider is configured, so nothing was summarized. Set ANTHROPIC_API_KEY (or another provider key) and restart agentmemory.	未配置 LLM 提供方，因此没有生成摘要。请设置 ANTHROPIC_API_KEY（或其他提供方密钥）并重启 agentmemory。
+Summarize this session?	生成此会话摘要？
+End sessions normally (the Stop hook does it) so each one gets a summary.	让会话正常结束（Stop 钩子会自动完成），这样每个会话都能获得摘要。
+Plays back a past session step by step: prompts, responses and tool calls in the order they happened, with their real timing. Works for any session agentmemory recorded, from any connected agent.	逐步回放过往会话：按实际发生的顺序、以真实时序播放提示词、回复和工具调用。适用于 agentmemory 记录的任意会话，来自任意已接入的 agent。
+plays a recorded session back step by step: each prompt, response and tool call in the order it happened, with its real timing.	逐步回放已记录的会话：每条提示词、回复和工具调用都按实际发生的顺序、以真实时序播放。
+shows when agents worked and what they did. Pick a day, a kind of work or a file to narrow the feed; every entry links to its session and observation. The feed updates live.	展示 agent 何时工作以及做了什么。可按日期、工作类型或文件收窄信息流；每条记录都链接到它的会话和观测。信息流实时更新。
+is what agentmemory learned about one codebase from its sessions and memories. Agents get it as context at session start. It opens on the project an agent worked in most recently.	是 agentmemory 从会话和记忆中了解到的某个代码库的情况。agent 会在会话开始时把它作为上下文获取。默认展示 agent 最近工作的项目。
+That sidebar title is a help text	侧栏标题是提示文本
+Replay steps through the prompts, responses and tool calls recorded in a session.	回放逐步呈现会话中记录的提示词、回复和工具调用。
+No prompt or tool call was captured for this session, so the timeline is empty.	此会话没有捕获到提示词或工具调用，因此时间线为空。
+Check its observations from a terminal:	在终端里检查它的观测：
+When agents worked	agent 工作时段
+Latest observations	最新观测
+Recent highlights	近期亮点
+active day	活跃日
+active days	活跃日
+busiest day	最忙日
+updates live	实时更新
+newest first	最新优先
+importance	重要度
+Any importance	任意重要度
+All statuses	全部状态
+All projects	全部项目
+All types	全部类型
+All operations	全部操作
+In the loaded entries	已加载条目中
+Other operations	其他操作
+Filter by operation	按操作筛选
+From date	起始日期
+To date	结束日期
+Minimum importance	最低重要度
+All	全部
+The newest sessions have no captured tool use yet. Kinds of work appear here as agents read, edit, run and search.	最新会话还没有捕获到工具使用。当 agent 读取、编辑、运行和搜索时，各类工作会出现在这里。
+The most important observation of each recent session shows here once one is rated 7 or higher. Ratings come from LLM compression.	每个近期会话中最重要的观测，只要评分达到 7 分及以上就会显示在这里。评分来自 LLM 压缩。
+Counted over memories and the last 20 sessions. Pick one to search memories for it.	统计范围是全部记忆和最近 20 个会话。点选一个即可用它检索记忆。
+Inferred from the files and concepts above, not written by an agent. Preferences you save as memories sit on the Memories page.	由上述文件和概念推断得出，并非 agent 写入。你保存为记忆的偏好会出现在“记忆”页。
+No errors recorded in the last 20 sessions. Failed tool calls land here once the same kind of error shows up.	最近 20 个会话中没有记录到错误。当同类错误重复出现时，失败的工具调用会汇集到这里。
+Off features explain empty panels on the pages listed. Turn one on with its setting, then restart agentmemory.	关闭的功能会解释所列页面上空白面板的原因。用对应的设置项开启某个功能，然后重启 agentmemory。
+Sparse graph.	图谱稀疏。
+The keyword index holds observations, memories and lessons, so its total is larger than the observation count.	关键词索引包含观测、记忆和经验教训，所以它的总数大于观测数。
+Read the full graph from a terminal:	在终端里读取完整图谱：
+No nodes yet	还没有节点
+Turn it on and restart:	开启它并重启：
+Try the same request from a terminal:	在终端里试同样的请求：
+Check from a terminal:	在终端里检查：
+Run the same query from a terminal:	在终端里运行同样的查询：
+Build it from a terminal to see the raw answer:	在终端里构建它，以查看原始结果：
+Search by meaning on the server instead:	改为在服务端按语义搜索：
+List lessons from a terminal:	在终端里列出经验教训：
+List them from a terminal:	在终端里列出它们：
+List every crystal from a terminal:	在终端里列出所有结晶：
+Search lessons from a terminal:	在终端里搜索经验教训：
+Recall the lessons that match a task:	按任务召回匹配的经验教训：
+Save a lesson when you correct the agent:	纠正 agent 时保存一条经验教训：
+Ask for the next unblocked actions:	获取下一批已解除阻塞的行动：
+Mark an action done:	把行动标记为已完成：
+List every action from a terminal:	在终端里列出所有行动：
+Record one by hand to watch it arrive:	手工记录一条，看它出现：
+Record one by hand to watch it arrive live:	手工记录一条，实时看它出现：
+Or save a memory that matches:	或者保存一条符合的记忆：
+Show the create command	显示创建命令
+Open your agent in a project and ask it anything. Sessions, observations and memories appear here as they are written.	在项目中打开你的 agent，随便问点什么。会话、观测和记忆会在写入时出现在这里。
+. Every page fills in live, without a reload, as soon as an agent with agentmemory hooks runs.	。只要接入 agentmemory 钩子的 agent 一运行，每个页面都会实时填充，无需刷新。
+Seeds three sample coding sessions and runs a search demo against this server:	向本服务注入三个示例编码会话，并运行一次搜索演示：
+Check that the server is running:	检查服务是否在运行：
+Offline: live updates are paused.	离线：实时更新已暂停。
+No LLM provider is configured, so Summarize would do nothing. Set a key and restart agentmemory:	未配置 LLM 提供方，所以“生成摘要”不会有任何效果。设置密钥并重启 agentmemory：
+No concepts yet. Concepts come from the tags on saved memories and from observations compressed by an LLM (	还没有概念。概念来自已保存记忆的标签，以及由 LLM 压缩的观测（
+with a provider key). Save a memory with concepts to start:	且需配置提供方密钥）。先保存一条带概念的记忆来开始：
+Type changed:	类型已变更：
+From an agent:	从 agent 发起：
+none (shared across projects)	无（跨项目共享）
+none (visible to every agent)	无（对所有 agent 可见）
+Memories are distilled facts agentmemory keeps across sessions: file locations, architecture decisions, conventions, user preferences. Agents recall them at the start of every session.	记忆是 agentmemory 跨会话保存的提炼事实：文件位置、架构决策、约定、用户偏好。agent 会在每次会话开始时召回它们。
+No agent has saved one yet. Hooks save them during coding sessions once an agent runs with agentmemory.	还没有 agent 保存过。agent 带 agentmemory 运行后，钩子会在编码会话中自动保存。
+This list shows the latest version of every memory that matches the search box and the project, agent and type filters. Filters and search run on the server over all memories, not only the loaded page.	此列表显示符合搜索框以及项目、agent、类型筛选条件的每条记忆的最新版本。筛选和搜索在服务端针对全部记忆执行，而不只作用于已加载的页面。
+This list shows sessions that match the search box and the project, agent and status filters. The filters run on the server over every session, not only the loaded page.	此列表显示符合搜索框以及项目、agent、状态筛选条件的会话。筛选在服务端针对全部会话执行，而不只作用于已加载的页面。
+The type chips and the importance picker narrow this list on the server.	类型标签和重要度选择器在服务端收窄此列表。
+Observations are the individual things the agent did: prompts, file reads and edits, commands, searches, errors.	观测是 agent 所做的一件件具体的事：提示词、文件读取与编辑、命令、搜索、错误。
+The filter matches lesson text, the reason it was learned and its tags, within the chosen project.	筛选匹配经验教训的文本、习得原因和标签，范围限于所选项目。
+The filter matches action titles, descriptions and tags, and the status picker narrows by status.	筛选匹配行动的标题、描述和标签，状态选择器按状态收窄结果。
+The filter matches crystal narratives, outcomes, files, project and lesson text.	筛选匹配结晶的叙事、结果、文件、项目和经验教训文本。
+The audit log records every change agentmemory made to stored data. The filters run on the server over the whole log, not only the loaded page.	审计日志记录 agentmemory 对存储数据所做的每次变更。筛选在服务端针对整个日志执行，而不只作用于已加载的页面。
+Compression, summaries, consolidation and graph extraction stay off until an LLM key is set. Memories, search and sessions still work.	在设置 LLM 密钥之前，压缩、摘要、整合和图谱抽取都保持关闭。记忆、搜索和会话仍然可用。
+Search matches exact keywords only. With embeddings it also finds memories by meaning.	搜索只匹配精确关键词。配置向量后，它还能按语义找到记忆。
+What agentmemory has learned about one project: the concepts and files that come up most and the conventions it noticed.	agentmemory 对某个项目了解到的情况：出现最多的概念与文件，以及它注意到的约定。
+agentmemory found no sessions for this project on the server, so there is nothing to build it from.	agentmemory 在服务端没有找到该项目的会话，因此没有可用于构建画像的素材。
+Not enough finished sessions yet: semantic facts need	已完成的会话还不够：语义事实至少需要
+The profile lists top concepts, files, conventions, recurring errors and recent highlights for	项目画像列出以下项目的热门概念、文件、约定、反复出现的错误和近期亮点：
+Detailed help	详细说明
+One thing an agent did during a session: a file read or edit, a command, a search, an error, a decision. Hooks capture them automatically.	agent 在一次会话中所做的一件事：读取或编辑文件、执行命令、搜索、报错或做出决定。钩子会自动捕获它们。
+A durable fact the agent should keep across sessions, such as an architecture note, a convention or a preference. Saved with memory_save or distilled from observations.	agent 应跨会话长期保留的事实，例如架构说明、约定或偏好。通过 memory_save 保存，或从观测中提炼。
+A short rule learned from past work ("always run tsc before commit"). Its confidence grows when the agent re-confirms it and decays when unused.	从过往工作中总结出的短规则（“提交前先跑 tsc”）。agent 再次确认时置信度上升，长期不用则衰减。
+A compact summary of one finished piece of work: what happened, tools used, files touched and lessons found. Kept after raw observations are pruned.	对一项已完成工作的紧凑总结：发生了什么、用了哪些工具、动了哪些文件、发现了哪些经验。原始观测被清理后仍会保留。
+A follow-up the agent tracked: a task, a decision to revisit, something blocked on input. Moves pending, active, done or blocked.	agent 跟踪的待办：一个任务、一个待重新审视的决定，或某个卡在等待输入的事项。状态在待处理、进行中、已完成或已阻塞之间流转。
+Actions that are unblocked and ready to pick up next. Everything they depend on is done.	已解除阻塞、可以接着做的行动。它们依赖的一切都已完成。
+One run of an agent in a project, from start to end. Observations belong to a session.	agent 在一个项目中的一次完整运行（从开始到结束）。观测从属于会话。
+Active means the agent is still running and sending observations. Completed means the session ended.	进行中表示 agent 仍在运行并持续发送观测；已完成表示会话已结束。
+The working directory an agent ran in. Memories, sessions and lessons are grouped by project.	agent 运行所在的工作目录。记忆、会话和经验教训按项目分组。
+Which agent or role wrote a record (for example coder or reviewer). Used to keep multi-agent memories apart.	写入该记录的 agent 或角色（例如 coder 或 reviewer）。用于区分多 agent 的记忆。
+A background step that turns many raw observations into fewer, longer-lived records: semantic facts and procedures. It needs an LLM provider.	一个后台步骤，把大量原始观测收敛为更少、更持久的记录：语义事实和流程。它需要 LLM 提供方。
+General facts distilled from many sessions ("the API uses jose for JWT"). Produced by consolidation.	从众多会话中提炼的通用事实（“该 API 用 jose 处理 JWT”）。由整合产生。
+Records that are never used lose strength or confidence over time, so stale knowledge stops crowding out fresh knowledge.	从不被使用的记录会随时间流失强度或置信度，从而避免陈旧知识挤占新知识。
+How many times the lesson was confirmed again: saved again with the same text by any agent, or strengthened with memory_lesson_strengthen. Each use raises confidence and restarts the decay clock.	该经验教训被再次确认的次数：任何 agent 用相同文本重新保存，或用 memory_lesson_strengthen 强化。每次使用都会提升置信度并重置衰减计时。
+Rules agentmemory infers from the files and concepts above: TypeScript when .ts files outnumber .js, a src/ layout when most files sit under src/, tests when test or spec files appear, and any concept that came up 3 or more times.	agentmemory 从上述文件和概念推断出的规则：.ts 文件多于 .js 时判定为 TypeScript；多数文件位于 src/ 下时判定为 src/ 布局；出现 test 或 spec 文件时判定有测试；以及任何出现 3 次及以上的概念。
+Unblocked and ready to pick up next: every action it depends on is done. memory_frontier returns these first.	已解除阻塞、可以接着做：它依赖的每个行动都已完成。memory_frontier 会优先返回这些。
+Where a memory came from: the sessions and observations it was distilled from. Memories saved directly with memory_save or the REST API have none.	记忆的来源：它是从哪些会话和观测中提炼出来的。直接用 memory_save 或 REST API 保存的记忆没有来源。
+What changed from the previous version. Struck-through words were removed, highlighted words were added.	与上一版本的差异。删除线表示被移除的词，高亮表示新增的词。
+The older memory this one replaced. The old version is kept for history but no longer returned by search.	被本条取代的旧记忆。旧版本会保留以供追溯，但不再由搜索返回。
+Where a record came from: an agent tool call, an automatic hook, an import or a user action.	记录的来源：agent 工具调用、自动钩子、导入或用户操作。
+The full-text index used for keyword search. It holds observations, memories and lessons, so its document count is usually higher than the observation count.	用于关键词搜索的全文索引。它包含观测、记忆和经验教训，所以文档数通常高于观测数。
+Observations that are searchable. The keyword index also contains memories and lessons, which is why its total is larger.	可被检索的观测。关键词索引还包含记忆和经验教训，这就是它总数更大的原因。
+Every observation a hook sends is written here first and removed once it is stored. If storing fails or the server restarts, it is retried instead of lost. Dead letters are the ones that still failed after every retry.	钩子发送的每条观测都会先写入这里，入库后移除。如果入库失败或服务重启，会重试而不是丢失。死信是重试全部失败后仍未成功的那些。
+A small file on this machine where hooks keep observations when the server is down or does not answer. It is sent automatically on the next hook call and at every start, and each observation carries an event id so nothing is stored twice.	本机上的一个小文件：当服务不可用或没有响应时，钩子把观测暂存在这里。下次钩子调用和每次启动时会自动补发，每条观测都带事件 ID，确保不会重复入库。
+Records waiting for an embedding so they can be found by meaning, not only by keywords.	等待生成向量的记录，以便按语义而不只是关键词被找到。
+How many relations touch this node. Nodes with more relations are drawn larger and get their labels first.	与该节点相连的关系数量。关系越多的节点绘制得越大，标签也优先显示。
+The observations that mentioned this entity, the sessions and projects they belong to, and memories distilled from the same observations or naming this entity. Imported code-graph nodes show the import instead.	提到该实体的观测、它们所属的会话与项目，以及从相同观测中提炼或直接点名该实体的记忆。导入的代码图谱节点则显示导入来源。
+Nodes with no relation yet. They sit in the dashed box under the graph until an observation mentions them together with another entity.	尚无任何关系的节点。在有观测把它们与另一个实体一同提到之前，它们会待在图下方的虚线框里。
+One entity in the knowledge graph, such as a file, a function, a library or a concept.	知识图谱中的一个实体，例如文件、函数、库或概念。
+A relation between two entities, such as "uses", "fixes" or "depends on".	两个实体之间的关系，例如 “uses”“fixes” 或 “depends on”。
+Protects against a failing LLM provider. Closed means calls go through normally. Open means too many recent failures, so calls are paused briefly. Half-open means it is testing whether the provider recovered.	防止 LLM 提供方故障拖垮系统。闭合表示调用正常放行；断开表示近期失败过多，调用被短暂暂停；半开表示正在试探提供方是否已恢复。
+How many times agentmemory functions (observe, search, remember, summarize and so on) ran since the worker started, with their failure counts.	自 worker 启动以来 agentmemory 各函数（observe、search、remember、summarize 等）的调用次数及失败次数。
+A rough estimate of prompt tokens saved by injecting a compact memory context instead of replaying every observation. It assumes about 80 tokens per observation and a 2,000 token budget per session.	粗略估计：用紧凑的记忆上下文注入代替回放每条观测所节省的提示词 token。按每条观测约 80 token、每会话 2,000 token 预算估算。
+JavaScript memory the worker is using, compared with the limit it may grow to. Warnings only matter when the process is also large overall.	worker 正在使用的 JavaScript 内存，以及它可增长到的上限。只有在进程整体占用也很大时，警告才需要在意。
+Total memory the worker process holds from the operating system, including code and buffers.	worker 进程从操作系统持有的内存总量，包括代码和缓冲区。
+How long the agentmemory worker has been running since it last started.	agentmemory worker 自上次启动以来的运行时长。
+Healthy means everything is normal. Degraded means something needs attention but memory still works. Critical means a core part is failing.	正常表示一切如常；降级表示有需要注意的地方但记忆功能仍可用；严重表示某个核心部分已失效。
+A record of every change agentmemory made to stored data: saves, deletes, imports, consolidation runs. Use it to see who changed what and when.	agentmemory 对存储数据所做每次变更的记录：保存、删除、导入、整合运行。用它查看谁在何时改了什么。
+Share of calls that failed. Functions that need an LLM show as off, not failing, when no LLM provider is set.	调用失败的占比。未配置 LLM 提供方时，需要 LLM 的函数会显示为关闭，而不是失败。
+Rebuild the profile from the latest sessions and memories now instead of using the cached copy	立即用最新的会话和记忆重建项目画像，而不是使用缓存副本
+Record one more use: confidence rises and the decay clock restarts	再记录一次使用：置信度上升，衰减计时重新开始
+Filter lessons by text, reason or tag (press /)	按文本、原因或标签筛选经验教训（按 /）
+Filter actions by title, description or tag (press /)	按标题、描述或标签筛选行动（按 /）
+Filter crystals by text, file, project or lesson (press /)	按文本、文件、项目或经验教训筛选结晶（按 /）
+Filter by target id or function, e.g. mem_ or lesson-save (press /)	按目标 ID 或函数筛选，例如 mem_ 或 lesson-save（按 /）
+Search memories by meaning or keyword (press /)	按语义或关键词搜索记忆（按 /）
+Search prompt, project, id or agent (press /)	搜索提示词、项目、ID 或 agent（按 /）
+Search memories	搜索记忆
+Search sessions	搜索会话
+Filter lessons	筛选经验教训
+Filter actions	筛选行动
+Filter audit entries by target id or function	按目标 ID 或函数筛选审计条目
+Filter sessions by	筛选会话：
+Filter memories by	筛选记忆：
+Select this memory	选择这条记忆
+Show only this project	只看此项目
+Show only project	只看项目
+Show only memories written by agent	只看由该 agent 写入的记忆
+Show only sessions of agent	只看该 agent 的会话
+Open version	打开版本
+Compare with the version before it	与上一版本比较
+Knowledge graph. Use plus and minus to zoom, 0 to fit, arrow keys to pan. Pick nodes from the list beside the graph.	知识图谱。用加号减号缩放，按 0 适配窗口，方向键平移。可从图谱旁的列表中选择节点。
+Zoom in (+)	放大（+）
+Zoom in	放大
+Fit the graph to the view	适配窗口显示图谱
+Fit (0)	适配（0）
+Filter nodes by type	按类型筛选节点
+Bulk actions	批量操作

@@ -1,0 +1,77 @@
+Heap is running tight:	堆内存吃紧：
+Engine connection state:	引擎连接状态：
+Keyword index (BM25)	关键词索引（BM25）
+recent failures	近期失败
+no LLM provider configured	未配置 LLM 提供方
+POST /agentmemory/graph/query failed. The server log has the HTTP error.	POST /agentmemory/graph/query 失败。服务日志中有 HTTP 错误详情。
+. This server is not on the default port 3111, so export its URL in the shell you start the agent from	。本服务不在默认端口 3111 上，因此请在启动 agent 的 shell 中导出它的 URL
+No session has ended yet, and nothing was imported.	还没有会话结束，也没有导入任何内容。
+. The graph was reset or rebuilt since the link was made.	图谱在建立该链接之后被重置或重建过。
+. It was deleted, or the link comes from another install.	它已被删除，或链接来自另一个安装实例。
+. It was forgotten, or the link comes from another install.	它已被遗忘，或链接来自另一个安装实例。
+. It was removed, or the link comes from another install.	它已被移除，或链接来自另一个安装实例。
+. It was deleted or decayed away, or the link comes from another install.	它已被删除或衰减消失，或链接来自另一个安装实例。
+. It does not run again.	它不会再次运行。
+. It resumes on the next start. To run it now:	它会在下次启动时继续。要立即运行：
+It runs in the background, resumes after a restart and stops by itself.	它在后台运行，重启后会继续，并会自行停止。
+Used for summaries, consolidation, typed graph extraction and optional compression.	用于摘要、整合、带类型的图谱抽取和可选的压缩。
+The number in brackets is the vector size (dimensions) the provider returns.	括号中的数字是提供方返回的向量维度。
+Shows whether observations from hooks are stored, retried or waiting offline.	显示来自钩子的观测是已入库、正在重试，还是离线等待。
+Could not be stored.	无法入库。
+Fix the cause, then retry them:	排除原因后重试：
+A test event sent through Redis every 30 seconds came back to the worker.	每 30 秒通过 Redis 发送的测试事件都回到了 worker。
+Meaning-based search. Each vector is one embedded record.	基于语义的搜索。每个向量对应一条已生成向量的记录。
+Waiting for AGENTMEMORY_VECTOR_BACKFILL=all and a restart.	等待 AGENTMEMORY_VECTOR_BACKFILL=all 并重启。
+Embedded in the background in batches of AGENTMEMORY_VECTOR_BACKFILL_MAX. If agentmemory stops first, it continues on the next start.	在后台按 AGENTMEMORY_VECTOR_BACKFILL_MAX 分批生成向量。如果 agentmemory 先停止，会在下次启动时继续。
+waiting for opt-in	等待启用
+Log writes failing:	日志写入失败：
+A one-time pass that trims each graph node and edge to its newest 32 source observations, so stores from older versions stop slowing graph search.	一次性处理：把每个图谱节点和关系裁剪为其最新的 32 条来源观测，避免旧版本遗留的数据拖慢图谱搜索。
+Last known state:	最后已知状态：
+updates every 30 s over the live stream, no refresh needed	通过实时流每 30 秒更新一次，无需刷新
+Stored in Redis (AGENTMEMORY_STATE_BACKEND=redis). If Redis restarts, restart agentmemory so the live stream resumes.	存储于 Redis（AGENTMEMORY_STATE_BACKEND=redis）。如果 Redis 重启，请重启 agentmemory 以恢复实时流。
+The engine stopped relaying live events through Redis, usually after Redis restarted. Data is still saved. Restart agentmemory to resume live updates.	引擎已停止通过 Redis 转发实时事件，通常发生在 Redis 重启之后。数据仍会保存。请重启 agentmemory 以恢复实时更新。
+Everything on this page is the last report	本页所有内容来自最后一次报告
+and may be out of date. It refreshes by itself when the connection returns.	可能已过期。连接恢复后它会自动刷新。
+Reports normally arrive every 30 seconds. The stream is connected, so the worker is busy or the iii engine is paused	报告通常每 30 秒到达。流已连接，说明 worker 正忙或 iii 引擎已暂停
+, or Redis restarted: the engine stops relaying live events after a Redis restart until agentmemory restarts	，或 Redis 刚重启过：Redis 重启后引擎会停止转发实时事件，直到 agentmemory 重启
+. The numbers below are from	。以下数字来自
+marks what is unblocked. Pick a row to change its status or see where it came from.	标记出已解除阻塞的项。点选一行可更改其状态或查看它的来源。
+. Ready markers update from the live stream.	就绪标记会随实时流更新。
+are compact summaries of finished work. They outlive pruned observations, so the next session gets the outcome, the files and the lessons in one read.	是已完成工作的紧凑总结。它们的生命周期长于被清理的观测，因此下次会话可以一次读到位：结果、文件和经验。
+in order, the files it touched, and the memories and lessons it produced. New sessions and observations appear here live.	按顺序列出它触及的文件，以及它产生的记忆和经验教训。新的会话和观测会实时出现在这里。
+. Load more to widen it.	。加载更多可扩大范围。
+· updates live	· 实时更新
+loaded below	以下已加载部分
+with the current filter	按当前筛选条件
+crystal text	结晶文本
+raw entry	原始条目
+audit entry id	审计条目 ID
+copy id	复制 ID
+copy name	复制名称
+copy curl	复制 curl
+copy text	复制文本
+copy JSON	复制 JSON
+copy MCP call	复制 MCP 调用
+MCP call	MCP 调用
+MCP recall call	MCP 召回调用
+meaning + keyword search	语义 + 关键词搜索
+search failed, try again	搜索失败，请重试
+keyword search (no embeddings configured)	关键词搜索（未配置向量）
+Forgotten in the viewer (bulk)	在查看器中遗忘（批量）
+: nothing recorded	：无记录
+Empty means every accepted observation is stored.	为空表示所有已接收的观测都已入库。
+Hooks write here only while the server is unreachable.	仅在服务不可达时，钩子才会写到这里。
+inspect	查看
+from a terminal	在终端中
+Spool and inbox, with --drain to send now	暂存文件与收件箱，带上 --drain 可立即发送
+No profile for this project yet	该项目还没有画像
+Nothing to replay yet	还没有可回放的内容
+No observations match	没有匹配的观测
+Nothing captured yet	还没有捕获到任何内容
+Nothing here yet	这里还没有内容
+Nothing recorded yet	还没有记录
+All caught up	暂无待处理
+Nothing pending	没有待处理项
+Turned off with AGENTMEMORY_CAPTURE_SPOOL=false, so hooks drop observations while the server is down.	已通过 AGENTMEMORY_CAPTURE_SPOOL=false 关闭，服务不可用时钩子会丢弃观测。
+Sent on the next hook call or at the next start. To send now:	会在下次钩子调用或下次启动时补发。要立即发送：
+Whether the agentmemory worker is connected to the iii engine that stores its data and runs its functions.	agentmemory worker 是否已连接到负责存储数据并执行函数的 iii 引擎。

@@ -1,0 +1,8 @@
+consolidation →	整合 →
+are short rules learned from past work. Confidence	是从过往工作中学到的简短规则。置信度
+rises each time an agent uses a lesson and decays when it goes unused; uses	每当代理使用一次经验教训就上升，闲置不用则衰减；使用次数
+counts those confirmations. Pick a row for its sources and actions.	统计这些确认次数。点击某行可查看其来源和操作。
+are follow-ups agents track between sessions. Status moves pending, active, done or blocked;	是代理跨会话跟踪的后续事项。状态会在 pending、active、done、blocked 之间流转；
+plays a recorded session back step by step: prompts, responses and tool calls in order, with their real timing. It works for sessions from every connected agent.	按步骤回放已录制的会话：提示词、响应和工具调用按序呈现，保留真实节奏。支持所有已连接代理的会话。
+Space	空格
+step.	单步。

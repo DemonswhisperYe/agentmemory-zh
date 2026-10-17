@@ -1,0 +1,98 @@
+[
+ [
+  "^The profile lists top concepts, files, conventions, recurring errors and recent highlights for (.+)\\.$",
+  "项目画像列出以下项目的热门概念、文件、约定、反复出现的错误和近期亮点：$1。"
+ ],
+ [
+  "^Heap is running tight: (\\d+)% of the heap limit in use \\(process memory (\\d+) MB\\)\\.$",
+  "堆内存吃紧：已用堆上限的 $1%（进程内存 $2 MB）。"
+ ],
+ [
+  "^Memory (critically high|high): (\\d+)% of the heap limit in use \\(process memory (\\d+) MB\\)\\.$",
+  "内存${1}：已用堆上限的 $2%（进程内存 $3 MB）。"
+ ],
+ [
+  "^Retried every (.+?) with backoff, up to (\\d+) attempts\\. Last error: (.+)$",
+  "每 $1 重试一次，带退避，最多 $2 次。最后错误：$3"
+ ],
+ [
+  "^Retried every (.+?) with backoff, up to (\\d+) attempts\\.$",
+  "每 $1重试一次，带退避，最多 $2 次。"
+ ],
+ [
+  "^Hooks write here only while the server is unreachable\\. Last drained (.+)$",
+  "仅在服务不可达时，钩子才会写到这里。上次排空：$1"
+ ],
+ [
+  "^Last drained (.+)$",
+  "上次排空：$1"
+ ],
+ [
+  "^Sent on the next hook call or at the next start\\. Last drained (.+)$",
+  "会在下次钩子调用或下次启动时补发。上次排空：$1"
+ ],
+ [
+  "^Showing the newest (\\d+) of (.+)\\. Open a session for its full timeline\\.$",
+  "显示最新 $1 条，共 $2 条。打开会话查看完整时间线。"
+ ],
+ [
+  "^Load older sessions$",
+  "加载更早的会话"
+ ],
+ [
+  "^(\\d+) of (\\d+) shown$",
+  "已显示 $1 / $2"
+ ],
+ [
+  "^Nodes are added when a session ends: its observations are scanned for files and concepts\\. None of the (\\d[\\d,]*) sessions has produced any yet\\.",
+  "节点在会话结束时加入：系统会扫描该会话的观测以提取文件和概念。这些 \\u0001 个会话都还没有产生任何节点。"
+ ],
+ [
+  "^full sync (.+), streaming since (.+)$",
+  "全量同步 $1，实时流自 $2 起"
+ ],
+ [
+  "^full sync (.+), stream reconnecting$",
+  "全量同步 $1，实时流重连中"
+ ],
+ [
+  "^full sync (.+)$",
+  "全量同步 $1"
+ ],
+ [
+  "^(\\d+)h (\\d+)m(\\+?)$",
+  "$1 小时 $2 分$3"
+ ],
+ [
+  "^(\\d+)m(\\+?)$",
+  "$1 分$2"
+ ],
+ [
+  "^(\\d+)d$",
+  "$1 天"
+ ],
+ [
+  "^Saved at most every (.+?) \\(([A-Z_]+)\\)$",
+  "最多每 $1保存一次（$2）"
+ ],
+ [
+  "^runs at most once every (.+?) \\(([A-Z_]+)\\)$",
+  "最多每 $1运行一次（$2）"
+ ],
+ [
+  "^every (.+?) \\(([A-Z_]+)\\)$",
+  "每 $1（$2）"
+ ],
+ [
+  "^Set ([A-Z_]+)=true and restart\\.$",
+  "设置 $1=true 并重启。"
+ ],
+ [
+  "^Set ([A-Z_]+)=false and restart to turn it off\\.$",
+  "设置 $1=false 并重启即可关闭。"
+ ],
+ [
+  "^Set (.+?) and restart\\.$",
+  "设置 $1 并重启。"
+ ]
+]

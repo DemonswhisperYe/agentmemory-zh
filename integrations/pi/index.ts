@@ -6,8 +6,9 @@ import { execFileSync } from "node:child_process";
 import { realpathSync, readFileSync } from "node:fs";
 import { createPlaintextBearerAuthGuard, resolveSecret } from "./security.js";
 
-// 本地适配：从 ~/.pi/agent/agentmemory.env 读连接配置
-//（pi 守护进程的环境变量不易注入，用配置文件自包含；已有环境变量时以环境变量优先）
+// LOCAL-PATCH(pi) 1/2 — 本地自用，不提上游。说明见仓库根目录 LOCAL-PATCHES.md
+// 从 ~/.pi/agent/agentmemory.env 读连接配置（pi 守护进程的环境变量不易注入，
+// 用配置文件自包含；已有环境变量时以环境变量优先；读不到静默跳过）
 try {
   for (const line of readFileSync(path.join(process.env.HOME || "", ".pi", "agent", "agentmemory.env"), "utf-8").split("\n")) {
     const t = line.trim();
@@ -426,8 +427,10 @@ export default function agentmemoryExtension(pi: ExtensionAPI) {
       body: { sessionId },
       timeoutMs: 5_000,
     });
+    // LOCAL-PATCH(pi) 2/2 — 本地自用，不提上游。说明见仓库根目录 LOCAL-PATCHES.md
     // Delayed sweep: crystallize actions completed >7 days ago so their lessons
     // get saved even when no agent called memory_crystallize explicitly.
+    // 注意：这里是 await + 30s 超时，服务端慢时会拖住退出。
     await callAgentMemory("crystals/auto", {
       body: { olderThanDays: 7 },
       timeoutMs: 30_000,

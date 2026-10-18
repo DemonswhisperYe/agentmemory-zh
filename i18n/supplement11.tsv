@@ -1,0 +1,8 @@
+Every check passed. Capture, search and the stream are working.	全部检查通过。捕获、搜索和数据流都在正常工作。
+Last known state	最后已知状态
+No problems found: the engine is connected, the search index matches the stored observations and no function is failing.	未发现问题：引擎已连接，搜索索引与已存观测一致，也没有函数在报错。
+ok	正常
+info	提示
+warn	警告
+offline	离线
+stale	数据已过期

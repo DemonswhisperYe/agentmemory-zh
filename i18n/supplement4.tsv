@@ -38,20 +38,12 @@ Reports normally arrive every 30 seconds. The stream is connected, so the worker
 marks what is unblocked. Pick a row to change its status or see where it came from.	标记出已解除阻塞的项。点选一行可更改其状态或查看它的来源。
 . Ready markers update from the live stream.	就绪标记会随实时流更新。
 are compact summaries of finished work. They outlive pruned observations, so the next session gets the outcome, the files and the lessons in one read.	是已完成工作的紧凑总结。它们的生命周期长于被清理的观测，因此下次会话可以一次读到位：结果、文件和经验。
-in order, the files it touched, and the memories and lessons it produced. New sessions and observations appear here live.	按顺序列出它触及的文件，以及它产生的记忆和经验教训。新的会话和观测会实时出现在这里。
 . Load more to widen it.	。加载更多可扩大范围。
 · updates live	· 实时更新
 loaded below	以下已加载部分
-with the current filter	按当前筛选条件
 crystal text	结晶文本
 raw entry	原始条目
 audit entry id	审计条目 ID
-copy id	复制 ID
-copy name	复制名称
-copy curl	复制 curl
-copy text	复制文本
-copy JSON	复制 JSON
-copy MCP call	复制 MCP 调用
 MCP call	MCP 调用
 MCP recall call	MCP 召回调用
 meaning + keyword search	语义 + 关键词搜索
@@ -59,15 +51,8 @@ search failed, try again	搜索失败，请重试
 keyword search (no embeddings configured)	关键词搜索（未配置向量）
 Forgotten in the viewer (bulk)	在查看器中遗忘（批量）
 : nothing recorded	：无记录
-Empty means every accepted observation is stored.	为空表示所有已接收的观测都已入库。
-Hooks write here only while the server is unreachable.	仅在服务不可达时，钩子才会写到这里。
 inspect	查看
-from a terminal	在终端中
 Spool and inbox, with --drain to send now	暂存文件与收件箱，带上 --drain 可立即发送
-No profile for this project yet	该项目还没有画像
-Nothing to replay yet	还没有可回放的内容
-No observations match	没有匹配的观测
-Nothing captured yet	还没有捕获到任何内容
 Nothing here yet	这里还没有内容
 Nothing recorded yet	还没有记录
 All caught up	暂无待处理

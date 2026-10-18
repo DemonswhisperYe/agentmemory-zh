@@ -1,0 +1,63 @@
+action create	创建行动
+action update	更新行动
+lease acquire	获取租约
+lease release	释放租约
+lease renew	续约
+routine run	运行例行流程
+signal send	发送信号
+checkpoint resolve	结算检查点
+mesh sync	同步对端
+relation create	创建关联
+relation update	更新关联
+sentinel create	创建哨兵
+sentinel trigger	触发哨兵
+sketch create	创建草图
+sketch promote	草图转正
+sketch discard	丢弃草图
+retention score	留存评分
+crystallize	结晶
+diagnose	诊断
+heal	修复数据
+index persist	索引落盘
+facet tag	打维度标签
+lesson save	保存经验
+lesson recall	召回经验
+lesson strengthen	强化经验
+lesson delete	删除经验教训
+obsidian export	导出 Obsidian
+reflect	反思
+insight search	搜索洞察
+skill extract	技能提取
+core add	加入核心
+core remove	移出核心
+auto page	换页归档
+vision embed	图像向量化
+slot append	追加槽位
+slot replace	替换槽位
+slot create	创建槽位
+slot delete	删除槽位
+slot reflect	槽位反思
+graph compact	压缩图谱
+session sweep	会话清扫
+change	变更
+clusters Processed	已处理聚类
+clusters Skipped	已跳过聚类
+edges Extracted	抽取关系数
+nodes Extracted	抽取节点数
+observation Count	观测数
+result Count	结果数
+results	结果
+new Id	新 ID
+old Id	旧 ID
+skill Id	技能 ID
+new Insights	新洞察
+reinforced	强化次数
+used Fallback	使用了降级方案
+query	查询
+steps	步骤
+tier	层级
+manual	手动
+· learned	· 学习于
+Strengthen	强化一次
+Saving…	保存中…
+hide	收起

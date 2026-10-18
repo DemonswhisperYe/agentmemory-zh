@@ -1,8 +1,9 @@
 # i18n — agentmemory 管理界面简体中文汉化工具链
 
 原理：**不改原代码**，在原版 `dist/viewer/index.html` 末尾注入一段 DOM 翻译扫描器
-（`window.__amZhWalker`），运行时对文本节点/属性做整句精确匹配 + 三层回退
-（数字归一化、正则模板、时长/日期格式化），并用 MutationObserver 覆盖动态渲染。
+（`window.__amZhWalker`），运行时对文本节点/属性逐层尝试：整句精确匹配 → 数字归一化
+→ 正则模板 → 片段级替换（句子里夹着的词条）→ 分隔符拼接 → 时长/日期格式化，
+并用 MutationObserver 覆盖动态渲染。
 
 ## 文件
 
@@ -10,21 +11,39 @@
 |---|---|
 | `ours.html` | 0.9.30 原版界面（构建输入，取自 npm 包 `dist/viewer/index.html`） |
 | `pairs-pr.json` | 社区 PR 词典（约 316 条，含原样占位条目） |
-| `supplement.tsv` ~ `supplement6.tsv` | 补译词条（约 1000+ 条） |
+| `supplement.tsv` ~ `supplement16.tsv` | 补译词条（约 1200 条，构建时自动 glob，按序号顺序合并） |
 | `dyn3.tsv` | 数字占位动态词条（`N` 归一成 `\u0001` 后匹配） |
 | `patterns.json` | 正则模板词条（非数字动态串） |
 | `build.py` | 合并词典 → 注入扫描器 → 输出 `viewer-zh.html` |
 | `scan2.py` | 宽容扫描器：升级新版本后查漏未汉化文案 |
 | `inventory.py` | 文案盘点（需要 PR 版界面 `theirs.html`，未随仓库分发） |
+| `test-walker.cjs` | 翻译层自检（68 项断言，`node test-walker.cjs`） |
 
-合并规则：**补译词条优先**于社区词典里的原样占位条目（`en → en`）。
+合并规则：**补译词条优先**于社区词典里的原样占位条目（`en → en`）；同一词条出现在多个
+补译文件里时**先出现的生效**，后出现的若译文不同会在构建输出里打印冲突清单（防止改了没反应）。
+
+## 数据保护（重要）
+
+代理自己产生的内容**不能被翻译**，否则等于篡改数据。扫描器分两级：
+
+| 级别 | 选择器 | 行为 |
+|---|---|---|
+| 代码区 | `pre, code, textarea, script, style, kbd, samp, #mem-edit-text` | 整段不碰（工具入参、JSON、观测原文） |
+| 数据区 | `.mem-detail-content, .mem-excerpt, .mem-diff, .mem-head, .mem-chip, .feed-text, .ses-summary, .session-preview, .src-text, .obs-narrative, .obs-prompt, .obs-item-title, .obs-item-sub, .gd-name, .gs-name, .tt-name, .layer-preview, .ver-text, .session-project, .ses-id-mini, .entity-link, .tag, .kind-tag, .pf, .pm, .replay-event-label` | 只允许**整串等于某条 UI 词条**时翻译（`Saved a memory` 译，`Fixed 3 bugs and moved 2 files` 不译）；`.feed-text` 额外允许 `标签: 数据` 的前缀翻译，数据部分原样 |
+
+界面升级后 class 名可能变化，**必须重新核对这两张选择器表**，否则数据会被误译。
 
 ## 构建
 
 ```bash
 python3 build.py                                   # 输出 viewer-zh.html
+node test-walker.cjs                               # 跑自检（改动翻译层后必跑）
 cp viewer-zh.html ../deploy/fnos/viewer-i18n-zh.html   # 部署目录里的是成品
 ```
+
+校验成品与线上是否一致：容器内 `md5sum .../dist/viewer/index.html` 应与
+`deploy/fnos/viewer-i18n-zh.html` 相同（服务端会替换 nonce 与版本占位符，HTTP 取回的
+页面需归一化后再比）。
 
 ## 升级新版本
 

@@ -2,18 +2,14 @@ No action has been marked done and crystallized yet. Crystals are built from don
 Crystallizing needs an LLM provider, and none is configured. Transcript imports on the other hand create crystals without one.	凝练需要 LLM 提供方，当前未配置。相比之下，转录导入无需提供方也能生成结晶。
 Crystallize every finished action now:	立即凝练所有已完成的行动：
 Or from an agent, for specific actions:	或从 agent 发起，针对特定行动：
-Set an LLM key and restart agentmemory:	设置 LLM 密钥并重启 agentmemory：
 Silence is data too	沉默也是数据
 Relation types	关系类型
 causes	导致
 modifies	修改
 uses	使用
 contains	包含
-related	相关
 fixes	修复
-supersedes	取代
 relates to	相关
-depends on	依赖于
 depends_on	依赖于
 related_to	相关
 refers to	指向
@@ -22,7 +18,6 @@ part_of	属于
 implements	实现
 Import a structural code graph made by graphify:	导入由 graphify 生成的结构化代码图谱：
 Query it from an agent:	从 agent 中查询它：
-Add to the graph	加入图谱
 The files, functions, concepts and decisions agents worked with, and how they relate. Click a node to see its relations and the observations it came from.	agent 处理过的文件、函数、概念和决策，以及它们之间的关系。点击节点可查看其关系和来源观测。
 No LLM provider is set, so only structural relations exist: files and concepts that show up in the same observation, plus anything imported from a code graph. Typed entities and relations need an LLM.	未配置 LLM 提供方，因此只有结构化关系：出现在同一观测中的文件和概念，以及从代码图谱导入的内容。带类型的实体和关系需要 LLM。
 An LLM provider is set but GRAPH_EXTRACTION_ENABLED is off, so only structural relations exist. Turn it on for typed entities and relations.	已配置 LLM 提供方，但 GRAPH_EXTRACTION_ENABLED 处于关闭状态，因此只有结构化关系。开启后才有带类型的实体和关系。
@@ -32,38 +27,26 @@ Without LLM extraction, a relation appears only when this entity shows up in the
 This node	此节点
 the other	另一方
 The other node	另一节点
-this one	此节点
+this one	这一条
 Structural code graph (graphify)	结构化代码图谱（graphify）
 · mentions it	· 提到它
 · same observations	· 相同的观测
-First seen	首次出现
-Also called	别名
 Search all	搜索全部
 nodes on the server	个节点（在服务端）
-most connected of	连接最多的
 nodes. Search finds the rest on the server.	个节点。其余节点可用搜索在服务端找到。
 from the live stream, last	来自实时流，最近
 This replays the whole corpus and can take several minutes on a large store.	这会回放整个语料库，数据量大时可能需要几分钟。
-Reload sources	重新加载来源
 No sources recorded. Nodes added before provenance tracking, or through a direct API call, carry no observation ids.	未记录来源。在来源追踪之前加入的节点，或通过直接 API 调用加入的节点，不携带观测 ID。
 Produced from this session	由本会话产生
 Nothing links back here yet. A memory links to this session when it is distilled from its observations by consolidation (needs an LLM) or saved with	还没有任何内容指回这里。当一条记忆由本会话的观测经整合（需要 LLM）提炼而来，或用
 ; a lesson links here when it is crystallized from this session.	保存时，它就会关联到本会话；当一条经验教训由本会话凝练而来时，也会出现在这里。
 ) as completed and records the end time now. It does not stop the agent: if it keeps working, its observations are still recorded under this session id.	) 标记为已完成，并立即记录结束时间。它不会停止 agent：如果 agent 继续工作，其观测仍会记录在这个会话 ID 下。
-Details	详情
 No start time recorded	未记录开始时间
 Tools used	使用的工具
 Files touched	涉及的文件
 Running so far	运行至今
-Last activity	最后活动
-End session…	结束会话…
 End session	结束会话
-End this session?	结束此会话？
 Delete…	删除…
-Delete lesson	删除经验教训
-Delete this lesson?	删除这条经验教训？
-Forget permanently	永久遗忘
-Forget this memory permanently?	永久遗忘这条记忆？
 Save as version	保存为新版本
 Review and save	检查并保存
 Loading older versions…	正在加载旧版本…
@@ -74,7 +57,6 @@ An older version (	旧版本（
 is kept as history and is not searched.	作为历史保留，但不会被搜索。
 The current text is	当前文本为
 Otherwise they stay as hidden history.	否则它们会作为隐藏历史保留。
-Memory text	记忆文本
 kept as history	保留为历史
 changes	变更
 Load older sessions	加载更早的会话
@@ -95,10 +77,8 @@ and writes a short summary: a title, what happened and the key decisions. The su
 Session ended. The wrap-up (summary, graph, consolidation) runs in the background and its results appear here live.	会话已结束。收尾工作（摘要、图谱、整合）在后台运行，结果会实时出现在这里。
 Ending the session failed. Check that agentmemory is running and try again.	结束会话失败。请检查 agentmemory 是否在运行后重试。
 No LLM provider is configured, so nothing was summarized. Set ANTHROPIC_API_KEY (or another provider key) and restart agentmemory.	未配置 LLM 提供方，因此没有生成摘要。请设置 ANTHROPIC_API_KEY（或其他提供方密钥）并重启 agentmemory。
-Summarize this session?	生成此会话摘要？
 End sessions normally (the Stop hook does it) so each one gets a summary.	让会话正常结束（Stop 钩子会自动完成），这样每个会话都能获得摘要。
 Plays back a past session step by step: prompts, responses and tool calls in the order they happened, with their real timing. Works for any session agentmemory recorded, from any connected agent.	逐步回放过往会话：按实际发生的顺序、以真实时序播放提示词、回复和工具调用。适用于 agentmemory 记录的任意会话，来自任意已接入的 agent。
-plays a recorded session back step by step: each prompt, response and tool call in the order it happened, with its real timing.	逐步回放已记录的会话：每条提示词、回复和工具调用都按实际发生的顺序、以真实时序播放。
 shows when agents worked and what they did. Pick a day, a kind of work or a file to narrow the feed; every entry links to its session and observation. The feed updates live.	展示 agent 何时工作以及做了什么。可按日期、工作类型或文件收窄信息流；每条记录都链接到它的会话和观测。信息流实时更新。
 is what agentmemory learned about one codebase from its sessions and memories. Agents get it as context at session start. It opens on the project an agent worked in most recently.	是 agentmemory 从会话和记忆中了解到的某个代码库的情况。agent 会在会话开始时把它作为上下文获取。默认展示 agent 最近工作的项目。
 That sidebar title is a help text	侧栏标题是提示文本
@@ -111,20 +91,8 @@ Recent highlights	近期亮点
 active day	活跃日
 active days	活跃日
 busiest day	最忙日
-updates live	实时更新
 newest first	最新优先
 importance	重要度
-Any importance	任意重要度
-All statuses	全部状态
-All projects	全部项目
-All types	全部类型
-All operations	全部操作
-In the loaded entries	已加载条目中
-Other operations	其他操作
-Filter by operation	按操作筛选
-From date	起始日期
-To date	结束日期
-Minimum importance	最低重要度
 All	全部
 The newest sessions have no captured tool use yet. Kinds of work appear here as agents read, edit, run and search.	最新会话还没有捕获到工具使用。当 agent 读取、编辑、运行和搜索时，各类工作会出现在这里。
 The most important observation of each recent session shows here once one is rated 7 or higher. Ratings come from LLM compression.	每个近期会话中最重要的观测，只要评分达到 7 分及以上就会显示在这里。评分来自 LLM 压缩。
@@ -132,7 +100,6 @@ Counted over memories and the last 20 sessions. Pick one to search memories for 
 Inferred from the files and concepts above, not written by an agent. Preferences you save as memories sit on the Memories page.	由上述文件和概念推断得出，并非 agent 写入。你保存为记忆的偏好会出现在“记忆”页。
 No errors recorded in the last 20 sessions. Failed tool calls land here once the same kind of error shows up.	最近 20 个会话中没有记录到错误。当同类错误重复出现时，失败的工具调用会汇集到这里。
 Off features explain empty panels on the pages listed. Turn one on with its setting, then restart agentmemory.	关闭的功能会解释所列页面上空白面板的原因。用对应的设置项开启某个功能，然后重启 agentmemory。
-Sparse graph.	图谱稀疏。
 The keyword index holds observations, memories and lessons, so its total is larger than the observation count.	关键词索引包含观测、记忆和经验教训，所以它的总数大于观测数。
 Read the full graph from a terminal:	在终端里读取完整图谱：
 No nodes yet	还没有节点
@@ -229,26 +196,10 @@ Filter lessons by text, reason or tag (press /)	按文本、原因或标签筛�
 Filter actions by title, description or tag (press /)	按标题、描述或标签筛选行动（按 /）
 Filter crystals by text, file, project or lesson (press /)	按文本、文件、项目或经验教训筛选结晶（按 /）
 Filter by target id or function, e.g. mem_ or lesson-save (press /)	按目标 ID 或函数筛选，例如 mem_ 或 lesson-save（按 /）
-Search memories by meaning or keyword (press /)	按语义或关键词搜索记忆（按 /）
-Search prompt, project, id or agent (press /)	搜索提示词、项目、ID 或 agent（按 /）
-Search memories	搜索记忆
-Search sessions	搜索会话
-Filter lessons	筛选经验教训
-Filter actions	筛选行动
-Filter audit entries by target id or function	按目标 ID 或函数筛选审计条目
 Filter sessions by	筛选会话：
 Filter memories by	筛选记忆：
-Select this memory	选择这条记忆
-Show only this project	只看此项目
 Show only project	只看项目
 Show only memories written by agent	只看由该 agent 写入的记忆
 Show only sessions of agent	只看该 agent 的会话
 Open version	打开版本
-Compare with the version before it	与上一版本比较
-Knowledge graph. Use plus and minus to zoom, 0 to fit, arrow keys to pan. Pick nodes from the list beside the graph.	知识图谱。用加号减号缩放，按 0 适配窗口，方向键平移。可从图谱旁的列表中选择节点。
-Zoom in (+)	放大（+）
 Zoom in	放大
-Fit the graph to the view	适配窗口显示图谱
-Fit (0)	适配（0）
-Filter nodes by type	按类型筛选节点
-Bulk actions	批量操作

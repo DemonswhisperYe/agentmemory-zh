@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """i18n 盘点：PR 字典对提取 + 0.9.30 界面文案清单 + 匹配统计"""
-import os, re, json, collections, sys
+import re, json, collections, sys
 
-BASE = os.path.dirname(os.path.abspath(__file__)) + os.sep
+BASE = "/root/pi-cwd-20260804/agentmemory-deploy/i18n/"
 
 # ---------- 1. 从 PR 版提取 I18N_STRINGS（en + zh-CN） ----------
 src = open(BASE + "theirs.html", encoding="utf-8").read()

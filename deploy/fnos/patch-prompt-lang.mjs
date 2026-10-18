@@ -18,7 +18,9 @@ const RULE =
   "in Simplified Chinese regardless of the input language. Never translate file paths, commands, " +
   "code, identifiers, URLs, version strings or established English technical terms; copy them " +
   "exactly as they appear in the input. For entity names use the exact name from the source. " +
-  "Keep the XML tag names and the enumerated type values exactly as specified in English.";
+  "Keys you invent yourself (such as property keys) must also be in Simplified Chinese, " +
+  "for example 部署环境 or 待解决问题. Keep the XML tag names and the enumerated type " +
+  "values exactly as specified in English.";
 
 const ANCHORS = [
   "You are a memory compression engine for an AI coding agent.",
@@ -45,6 +47,7 @@ if (files.length === 0) {
 
 const found = new Set();
 let patched = 0;
+let schemaPatched = 0;
 for (const file of files) {
   const path = join(DIST, file);
   const before = readFileSync(path, "utf8");
@@ -55,6 +58,20 @@ for (const file of files) {
     if (after.includes(anchor + RULE)) continue; // 幂等
     after = after.split(anchor).join(anchor + RULE);
     patched += 1;
+  }
+  // 自由键的 few-shot：把占位符 key="key" 换成中文键示例（示例比规则更有效）
+  if (after.includes('<property key="key">')) {
+    after = after.replace(
+      /(\n[ \t]*)<property key="key">value<\/property>/g,
+      (_m, indent) =>
+        indent + '<property key="部署环境">NAS 上的容器</property>' +
+        indent + '<property key="待解决问题">连续失败阈值的误报率校准</property>',
+    );
+    if (!after.includes('部署环境')) {
+      console.error("patch-prompt-lang: property 示例替换失败");
+      process.exit(1);
+    }
+    schemaPatched += 1;
   }
   if (after !== before) writeFileSync(path, after);
 }
@@ -68,6 +85,10 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
+if (schemaPatched === 0) {
+  console.error("patch-prompt-lang: 未找到 <property key=\"key\"> 示例，上游 schema 可能已改动");
+  process.exit(1);
+}
 console.log(
-  `patch-prompt-lang: 追加语言规则 ${patched} 处，覆盖 ${found.size}/${ANCHORS.length} 条提示词，扫描 ${files.length} 个文件`,
+  `patch-prompt-lang: 自由键示例替换 ${schemaPatched} 个文件；追加语言规则 ${patched} 处，覆盖 ${found.size}/${ANCHORS.length} 条提示词，扫描 ${files.length} 个文件`,
 );

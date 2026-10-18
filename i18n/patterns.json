@@ -1,5 +1,65 @@
 [
  [
+  "^Only one version so far\\. Editing it here, or saving a near-duplicate with memory_save, creates v(\\d+) and keeps this text as history\\.$",
+  "目前只有一个版本。在此编辑，或用 memory_save 保存一个近似重复项，会创建 v$1，并把这段文本保留为历史。"
+ ],
+ [
+  "^Changes from (v\\d+) to (v\\d+)$",
+  "从 $1 到 $2 的变化"
+ ],
+ [
+  "^failing: (.+)$",
+  "失败：$1"
+ ],
+ [
+  "^Last run (.+) ago: (\\d+) new procedures?\\.$",
+  "上次运行 $1前：$2 条新程序。"
+ ],
+ [
+  "^Last run (.+) ago: (\\d+) new facts?\\.$",
+  "上次运行 $1前：$2 条新事实。"
+ ],
+ [
+  "^Last run (.+) ago: (\\d+) new relations?\\.$",
+  "上次运行 $1前：$2 条新关联。"
+ ],
+ [
+  "^Last run (.+) ago: (\\d+) new insights?\\.$",
+  "上次运行 $1前：$2 条新洞察。"
+ ],
+ [
+  "^Last run (.+) ago: (\\d+) new crystals?\\.$",
+  "上次运行 $1前：$2 条新结晶。"
+ ],
+ [
+  "^Last run (.+?)\\s+failed: (.+)$",
+  "上次运行 $1失败：$2"
+ ],
+ [
+  "^Last run (.+)$",
+  "上次运行 $1"
+ ],
+ [
+  "^consolidated (.+)$",
+  "整合于 $1"
+ ],
+ [
+  "^Not working correctly: (.+?) \\((\\d+) more items? below\\.\\)$",
+  "无法正常工作：$1（另有 $2 项，见下）"
+ ],
+ [
+  "^Working, but needs attention: (.+?) \\((\\d+) more items? below\\.\\)$",
+  "能工作，但需要关注：$1（另有 $2 项，见下）"
+ ],
+ [
+  "^Not working correctly: (.+)$",
+  "无法正常工作：$1"
+ ],
+ [
+  "^Working, but needs attention: (.+)$",
+  "能工作，但需要关注：$1"
+ ],
+ [
   "^The profile lists top concepts, files, conventions, recurring errors and recent highlights for (.+)\\.$",
   "项目画像列出以下项目的热门概念、文件、约定、反复出现的错误和近期亮点：$1。"
  ],
@@ -94,5 +154,117 @@
  [
   "^Set (.+?) and restart\\.$",
   "设置 $1 并重启。"
+ ],
+ [
+  "^(\\d+), never confirmed again yet$",
+  "$1，之后再未被确认过"
+ ],
+ [
+  "^(\\d+), last$",
+  "$1，最近一次"
+ ],
+ [
+  "· showing the ([\\d,]+) most connected",
+  "· 仅显示连接最多的 $1 个"
+ ],
+ [
+  "· tier all",
+  "· 层级：全部"
+ ],
+ [
+  "· tier ([\\w-]+)",
+  "· 层级：$1"
+ ],
+ [
+  "^checked ([\\d,]+) facts and ([\\d,]+) procedures$",
+  "检查 $1 条事实和 $2 个程序"
+ ],
+ [
+  "^failed: (.+)$",
+  "失败：$1"
+ ],
+ [
+  "^skipped: (.+)$",
+  "已跳过：$1"
+ ],
+ [
+  "^unsaved changes since (.+)$",
+  "自 $1起有未保存更改"
+ ],
+ [
+  "^not saved since start, unsaved changes since (.+)$",
+  "启动后未保存，自 $1起有未保存更改"
+ ],
+ [
+  "^saved (.+?), unsaved changes since (.+)$",
+  "保存于 $1，自 $2起有未保存更改"
+ ],
+ [
+  "^(.+?)\\. It does not run again\\.$",
+  "$1。它不会再次运行。"
+ ],
+ [
+  "^of ([\\d,.]+) MB heap · RSS ([\\d,.]+) MB$",
+  "上限 $1 MB · RSS $2 MB"
+ ],
+ [
+  "^Session running: (.+)$",
+  "进行中：$1"
+ ],
+ [
+  "^Session ended: (.+)$",
+  "已结束：$1"
+ ],
+ [
+  "^Only people \\((\\d[\\d,]*)\\)$",
+  "仅人物 ($1)"
+ ],
+ [
+  "^Only functions \\((\\d[\\d,]*)\\)$",
+  "仅函数 ($1)"
+ ],
+ [
+  "^Only concepts \\((\\d[\\d,]*)\\)$",
+  "仅概念 ($1)"
+ ],
+ [
+  "^Only errors \\((\\d[\\d,]*)\\)$",
+  "仅错误 ($1)"
+ ],
+ [
+  "^Only decisions \\((\\d[\\d,]*)\\)$",
+  "仅决策 ($1)"
+ ],
+ [
+  "^Only patterns \\((\\d[\\d,]*)\\)$",
+  "仅模式 ($1)"
+ ],
+ [
+  "^Only libraries \\((\\d[\\d,]*)\\)$",
+  "仅库 ($1)"
+ ],
+ [
+  "^Only (.+)$",
+  "仅 $1"
+ ],
+ [
+  "^(\\d[\\d,]*) failed across (\\d+) functions?$",
+  "$1 个失败，涉及 $2 个功能"
+ ],
+ [
+  "^(\\d[\\d,]*) accepted · (\\d[\\d,]*) stored · (\\d[\\d,]*) duplicates skipped · (\\d[\\d,]*) recovered by retry · (\\d[\\d,]*) dead$",
+  "$1 条已接受 · $2 条已存储 · $3 条重复已跳过 · $4 条经重试恢复 · $5 条死信"
+ ],
+ [
+  "^(\\d[\\d,]*) pending · (\\d[\\d,]*) retrying · (\\d[\\d,]*) dead$",
+  "$1 待处理 · $2 重试中 · $3 死信"
+ ],
+ [
+  "^(\\d[\\d,]*) observations \\+ (\\d[\\d,]*) memories \\+ (\\d[\\d,]*) lessons\\.?\\s*$",
+  "$1 条观测 + $2 条记忆 + $3 条经验教训。"
+ ],
+ [
+  "^no failures across (\\d+) functions?$",
+  "无失败，涉及 $1 个功能"
  ]
 ]

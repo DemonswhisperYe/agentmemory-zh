@@ -35,3 +35,8 @@ benchmark/results/capture-costs-*
 # Generated native package resources
 integrations/openclaw/skills/
 integrations/openclaw/LICENSE
+
+# i18n 构建产物
+i18n/viewer-zh.html
+i18n/walker-check.js
+*.bak

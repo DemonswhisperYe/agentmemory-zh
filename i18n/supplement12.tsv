@@ -1,0 +1,38 @@
+Versions	版本
+Only one version so far. Editing it here, or saving a near-duplicate with memory_save, creates v	目前只有一个版本。在此编辑，或用 memory_save 保存一个近似重复项，会创建 v
+and keeps this text as history.	，并把这段文本保留为历史。
+. Link it to the session or memory it came from by saving it again with them; the lesson is strengthened and the sources are added:	。再次保存它并附上其来源的会话或记忆即可建立关联；该经验会被强化，来源也会一并添加：
+Projects	项目
+Updates arrive on the live stream; nothing refreshes on a timer.	更新经实时流推送，不靠定时刷新。
+more in the sessions above.	条更多，见上方会话。
+Patched	已补丁
+times	次
+Never ran on this instance.	本实例从未运行过。
+consolidated	整合于
+context	上下文
+description	描述
+return type	返回类型
+role	角色
+semantic	语义
+task id	任务 ID
+test scenario	测试场景
+purpose	用途
+input	输入
+output	输出
+parameters	参数
+notes	备注
+reason	原因
+result	结果
+example	示例
+usage	用法
+location	位置
+priority	优先级
+name	名称
+type	类型
+files	文件
+owner	负责人
+author	作者
+constraints	约束
+dependencies	依赖
+summary	摘要
+source	来源

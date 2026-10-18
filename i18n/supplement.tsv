@@ -142,8 +142,8 @@ Summarize this session?	总结此会话？
 An LLM reads the observations of	由 LLM 阅读以下观测
 all projects	所有项目
 No sources recorded. This lesson was saved by hand without	未记录来源。此经验由手工保存，缺少
-Delete this lesson?	删除此经验？
-Delete lesson	删除经验
+Delete this lesson?	删除这条经验教训？
+Delete lesson	删除经验教训
 Created by	创建者
 Assigned to	指派给
 Parent	父级
@@ -215,7 +215,7 @@ Observations indexed	已索引观测
 Capture inbox	捕获收件箱
 Local capture spool	本地捕获缓冲
 Pending vector backfill	待补向量
-related to	相关于
+related to	相关联
 Where it came from	来龙去脉
 Unlinked nodes	未连接节点
 Edge	边
@@ -307,7 +307,6 @@ nodes and	个节点和
 relations extracted. New ones arrive on the live stream.	条已提取关系。新的会通过实时流送达。
 The rebuild failed. Check the server log.	重建失败，请检查服务日志。
 Searching…	搜索中…
-matching memor	匹配的记忆
 No memories match	没有匹配的记忆
 No latest memory matches	没有匹配的最新记忆
 Describe the fact to keep	描述要保留的事实
@@ -523,7 +522,6 @@ Point it at one .jsonl file or a folder that contains them.	指向一个 .jsonl 
 No .jsonl transcripts found under	未在以下位置找到 .jsonl 记录：
 . Nothing was imported.	。未导入任何内容。
 SUMMARY	摘要
-OBSERVATIONS	观测
 FUNCTION CALLS	函数调用
 tracked follow-ups	跟踪中的后续事项
 checked	检查于

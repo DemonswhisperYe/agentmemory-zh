@@ -33,7 +33,7 @@ ENV AGENTMEMORY_III_VERSION=${III_VERSION} \
 
 # 放行局域网访问：官方 CSP 的 connect-src 只允许 localhost 的 WebSocket，
 # 手机/其他机器访问时实时数据流会被拦（界面卡 CONNECTING）。给 CSP 补上本机地址。
-RUN sed -i 's|wss://127\.0\.0\.1:\*|wss://127.0.0.1:* ws://192.168.1.100:* wss://192.168.1.100:* http://192.168.1.100:*|g' \
+RUN sed -i 's|wss://127\.0\.0\.1:\*|wss://127.0.0.1:* ws://192.168.31.128:* wss://192.168.31.128:* http://192.168.31.128:*|g' \
     /opt/agentmemory/node_modules/@agentmemory/agentmemory/dist/*.mjs
 
 # 让 LLM 生成的记忆跟随输入语言：官方 14 条提示词（compression/summary/consolidation/

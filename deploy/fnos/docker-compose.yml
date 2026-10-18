@@ -19,7 +19,7 @@ services:
       # viewer 对外开放时官方强制要求 HMAC 密钥鉴权（首启自动生成，存 /data/.hmac）
       AGENTMEMORY_VIEWER_HOST: "0.0.0.0"
       # viewer 对外开放还要求 Host 头白名单（防 DNS 重绑定）
-      VIEWER_ALLOWED_HOSTS: "localhost:3113,127.0.0.1:3113,192.168.1.100:3113"
+      VIEWER_ALLOWED_HOSTS: "localhost:3113,127.0.0.1:3113,192.168.31.128:3113"
       # 直接指定引擎配置，绕过 CLI 自带的配置生成逻辑（0.9.30 的生成器会把
       # allowed_origins 拼成重复块导致 YAML 解析失败）
       AGENTMEMORY_III_CONFIG: "/data/iii-config.engine.yaml"
@@ -27,12 +27,12 @@ services:
       III_REST_PORT: "3111"
       III_STREAM_PORT: "3112"
       # ===== LLM：CPA 反代（OpenAI 兼容）=====
-      OPENAI_API_KEY: "sk-REPLACE_WITH_YOUR_LLM_KEY"
-      OPENAI_BASE_URL: "http://192.168.1.100:8317/v1"
+      OPENAI_API_KEY: "sk-REPLACE_WITH_YOUR_LLM_KEY"   # 本机真实密钥不要提交
+      OPENAI_BASE_URL: "http://192.168.31.128:8317/v1"
       OPENAI_MODEL: "agnes-3.0-flash"
       # ===== 向量：Ollama 的 OpenAI 兼容 embeddings 端点（现用中文向量模型）=====
       OPENAI_EMBEDDING_API_KEY: "ollama"   # Ollama 不校验密钥，占位非空即可
-      OPENAI_EMBEDDING_BASE_URL: "http://192.168.1.100:11434/v1"
+      OPENAI_EMBEDDING_BASE_URL: "http://192.168.31.128:11434/v1"
       OPENAI_EMBEDDING_MODEL: "shaw/dmeta-embedding-zh"
       OPENAI_EMBEDDING_DIMENSIONS: "768"   # dmeta 是 768 维，不声明会被按默认 1536 算导致维度不匹配
       AGENTMEMORY_VECTOR_BACKFILL: "all"   # 开启存量文档向量回填（默认暂停）

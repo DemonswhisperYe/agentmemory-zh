@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """宽容版全量扫描：捞出所有未翻译英文（含数字/模板符/长句/小写词）"""
-import os, re, json, collections
+import re, json, collections
 
-BASE = os.path.dirname(os.path.abspath(__file__)) + os.sep
+BASE = "/root/pi-cwd-20260804/agentmemory-deploy/i18n/"
 src = open(BASE + "ours.html", encoding="utf-8").read()
 
 pairs = dict(json.load(open(BASE + "pairs-pr.json", encoding="utf-8")))

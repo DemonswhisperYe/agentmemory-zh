@@ -30,6 +30,7 @@ services:
       OPENAI_API_KEY: "sk-REPLACE_WITH_YOUR_LLM_KEY"   # 本机真实密钥不要提交
       OPENAI_BASE_URL: "http://192.168.31.128:8317/v1"
       OPENAI_MODEL: "agnes-3.0-flash"
+      AGENTMEMORY_LLM_TIMEOUT_MS: "120000"   # LLM 长尾延迟常超 60s 默认预算，放宽到 120s
       # ===== 向量：Ollama 的 OpenAI 兼容 embeddings 端点（现用中文向量模型）=====
       OPENAI_EMBEDDING_API_KEY: "ollama"   # Ollama 不校验密钥，占位非空即可
       OPENAI_EMBEDDING_BASE_URL: "http://192.168.31.128:11434/v1"
